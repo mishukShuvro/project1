@@ -20,7 +20,7 @@ const items = {
 
     couse: {
         name: "Couse",
-        size: [7, 6],
+        size: [5, 3],
     },
     
 };
@@ -124,8 +124,7 @@ io.on("connection", (socket) => {
         }
         character.position = from;
         character.path = path;
-        console.log(path);
-        io.emit("characters", characters);
+        io.emit("playerMove", character); //i think think the problem is here
     });
 
     socket.on("disconnect", () => {
